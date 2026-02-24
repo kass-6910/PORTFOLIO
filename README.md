@@ -2,7 +2,14 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 
 ## Getting Started
 
-First, run the development server:
+This repo contains:
+
+- a **Next.js app (React)** at the repo root
+- a **Vite React app** in `vite-app/`
+
+### Next.js (root)
+
+Run the development server:
 
 ```bash
 npm run dev
@@ -15,6 +22,22 @@ bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+### Vite React (`vite-app/`)
+
+Run the Vite dev server from the repo root:
+
+```bash
+npm run dev:vite
+```
+
+Or from inside the folder:
+
+```bash
+cd vite-app && npm run dev
+```
+
+Vite typically runs on [http://localhost:5173](http://localhost:5173).
 
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 

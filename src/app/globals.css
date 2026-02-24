@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #010104;
+  --foreground: #f4f6ff;
 }
 
 @theme inline {
@@ -14,8 +14,8 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #010104;
+    --foreground: #f4f6ff;
   }
 }
 
@@ -23,4 +23,157 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+/* --- Portfolio stage (3D + overlay) --- */
+.stage {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background: radial-gradient(1200px 800px at 50% 30%, rgba(42, 107, 255, 0.08), transparent 55%),
+    radial-gradient(900px 600px at 20% 80%, rgba(134, 56, 255, 0.06), transparent 60%),
+    #010104;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  display: grid;
+  grid-template-rows: auto 1fr;
+  padding: 18px;
+}
+
+.overlayTop {
+  display: flex;
+  justify-content: center;
+}
+
+.pill {
+  pointer-events: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(2, 2, 10, 0.55);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background: #2a6bff;
+  box-shadow: 0 0 18px rgba(42, 107, 255, 0.65);
+}
+
+.pillText {
+  font-size: 12px;
+  letter-spacing: 0.02em;
+  color: rgba(244, 246, 255, 0.82);
+}
+
+.panel {
+  pointer-events: auto;
+  align-self: end;
+  justify-self: center;
+  width: min(880px, calc(100vw - 32px));
+  padding: 22px 22px 20px;
+  border-radius: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(2, 2, 10, 0.55);
+  backdrop-filter: blur(14px);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.55);
+  margin-bottom: 22px;
+}
+
+.kicker {
+  margin: 0 0 8px;
+  font-size: 13px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: rgba(244, 246, 255, 0.65);
+}
+
+.title {
+  margin: 0 0 10px;
+  font-size: clamp(28px, 4vw, 44px);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  color: rgba(244, 246, 255, 0.96);
+}
+
+.body {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.6;
+  color: rgba(244, 246, 255, 0.78);
+}
+
+.contact-btn:hover {
+  background: rgba(255, 255, 255, 0.1) !important;
+  border-color: rgba(255, 255, 255, 0.2) !important;
+  transform: translateY(-2px);
+}
+
+.contact-btn:active {
+  transform: translateY(0);
+}
+
+input:focus {
+  outline: none;
+  border-color: #2a6bff !important;
+  box-shadow: 0 0 0 2px rgba(42, 107, 255, 0.2);
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  align-items: center;
+}
+
+@media (max-width: 768px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
+
+.skill-badge {
+  display: inline-flex;
+  padding: 4px 10px;
+  border-radius: 6px;
+  background: rgba(42, 107, 255, 0.1);
+  border: 1px solid rgba(42, 107, 255, 0.2);
+  color: #a5c3ff;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-right: 8px;
+  margin-bottom: 8px;
+}
+
+.info-item {
+  border-left: 1px solid rgba(255, 255, 255, 0.1);
+  padding-left: 15px;
+}
+
+.info-label {
+  display: block;
+  font-size: 10px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.4);
+  margin-bottom: 4px;
+}
+
+.info-value {
+  font-size: 14px;
+  color: white;
+  font-weight: 500;
 }
