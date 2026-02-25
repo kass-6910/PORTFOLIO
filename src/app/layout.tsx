@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Portfolio",
-  description: "Portfolio 3D sur fond noir profond",
+  title: "Kassim Khemaci | Creative Portfolio 2025",
+  description: "Digital Portfolio immersing you in the intersection of Fullstack development and Artificial Intelligence.",
 };
 
 export default function RootLayout({
